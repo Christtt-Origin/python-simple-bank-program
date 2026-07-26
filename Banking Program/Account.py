@@ -1,4 +1,5 @@
 from Function import decoration
+from getpass import getpass
 
 
 class Account:
@@ -34,7 +35,7 @@ class Account:
     def valid_password():
 
         while True:
-            password = input("Create password: ")
+            password = getpass("Create password: ")
             if not password:
                 print("Password required!")
             elif len(password) <= 3:
@@ -70,7 +71,7 @@ class Account:
     def login():
 
         username = input("Enter username: ").lower()
-        password = input("Enter password: ")
+        password = getpass("Enter password: ")
 
         if username in Account.accounts:
             account = Account.accounts.get(username)

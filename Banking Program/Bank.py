@@ -1,9 +1,10 @@
 from Account import Account
-from Function import *
+from Function import (decoration, history_deposit, history_withdraw, history_transaction)
 
 
 class Bank:
 
+    @staticmethod
     def start_program():
         while True:
             print("========== PYTHON BANK ==========")
@@ -24,6 +25,7 @@ class Bank:
                 case _:
                     print("Invalid choice")
 
+    @staticmethod
     def main_menu(account):
         while True:
             print("=========== DASHBOARD ===========")
@@ -51,6 +53,7 @@ class Bank:
                 case _:
                     print("Invalid choice")
 
+    @staticmethod
     def deposit(account):
         amount = int(input("Deposit: "))
         if amount < 0:
@@ -64,6 +67,7 @@ class Bank:
 
         history_deposit(account, amount)
 
+    @staticmethod
     def withdraw(account):
         amount = int(input("Withdraw: "))
         if amount < 0:
@@ -84,6 +88,7 @@ class Bank:
 
         history_withdraw(account, amount)
 
+    @staticmethod
     def transfer(account):
         uid = int(input("Enter account UID: "))
 
@@ -123,8 +128,9 @@ class Bank:
         account.balance -= amount
         target.balance += amount
 
-        history_transaction(account, amount)
+        history_transaction(account, target, amount)
 
+    @staticmethod
     def history(account):
         print("=" * 60)
         print(f"{'No':<5}{'Type':<12}{'To':<15}{'Amount':<15}{'Balance':<15}")
@@ -140,6 +146,7 @@ class Bank:
             )
         print("=" * 60)
 
+    @staticmethod
     def logout(account):
         decoration()
         print("You logged out!")

@@ -20,7 +20,7 @@ def history_withdraw(account, amount):
     })
 
 
-def history_transaction(account, amount):
+def history_transaction(account, target, amount):
     account.history.append({
         "Type": "Transfer",
         "To": target.username,
