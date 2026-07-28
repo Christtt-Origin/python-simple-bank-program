@@ -1,5 +1,6 @@
 from Account import Account
-from Function import (decoration, history_deposit, history_withdraw, history_transaction)
+from Function import (decoration, history_deposit,
+                      history_withdraw, history_transaction)
 
 
 class Bank:
@@ -49,7 +50,7 @@ class Bank:
                 case "4":
                     Bank.history(account)
                 case "5":
-                    Bank.logout(account)
+                    Bank.logout()
                 case _:
                     print("Invalid choice")
 
@@ -147,7 +148,7 @@ class Bank:
         print("=" * 60)
 
     @staticmethod
-    def logout(account):
+    def logout():
         decoration()
         print("You logged out!")
         Bank.start_program()
